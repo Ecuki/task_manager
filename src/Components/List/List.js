@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./List.scss";
+// List ([ {id:1, ...},{id:2,..},{}, ...], children)
 function List({ items, children }) {
   return (
     <div class="list-group">
