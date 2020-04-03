@@ -1,41 +1,39 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import {
-  Nav,
-  NavItem,
-  Dropdown,
-  DropdownItem,
-  DropdownToggle,
-  DropdownMenu,
-  NavLink
-} from "react-bootstrap";
-
+import React from "react";
+import { Link } from "react-router-dom";
+import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+import "./Header.scss";
 function Header() {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const toggle = () => setDropdownOpen(!dropdownOpen);
   return (
-    <div className="header">
-      <Nav pills>
-        <NavItem>
-          <NavLink href="/main" active>
-            Main
-          </NavLink>
-        </NavItem>
-
-        <NavItem>
-          <NavLink href="/tasks">Tasks</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="/burndown">Burndown</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink disabled href="#">
-            Disabled Link
-          </NavLink>
-        </NavItem>
-      </Nav>
-    </div>
+    <>
+      <Navbar bg="light" variant="light">
+        <Navbar.Brand>
+          <h3 className="logo">
+            <Link to="/home" className="logo-text">
+              TaskManager
+            </Link>
+          </h3>
+        </Navbar.Brand>
+        <Nav className="mr-auto">
+          <LinkContainer exact to="/tasks">
+            <Button variant="light">Tasks</Button>
+          </LinkContainer>
+          <LinkContainer to="/work">
+            <Button variant="light">Work</Button>
+          </LinkContainer>
+          <LinkContainer to="/burndown">
+            <Button variant="light">Burndown</Button>
+          </LinkContainer>
+          <LinkContainer to="/about">
+            <Button variant="light">About</Button>
+          </LinkContainer>
+        </Nav>
+        <Form inline>
+          <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+          <Button variant="outline-secondary">Search</Button>
+        </Form>
+      </Navbar>
+    </>
   );
 }
 

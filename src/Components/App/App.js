@@ -1,22 +1,34 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import "./App.css";
 import Header from "../Header";
+import Home from "../Home";
+import Tasks from "../Tasks";
+import Container from "react-bootstrap/Container";
+import "./App.css";
 
 function App() {
   return (
-    <Container>
+    <Container
+      className="column justify-content-center"
+      style={{ height: "100vh" }}
+    >
       <Router>
         <Header />
         <Switch>
-          <Route path="/about">
-            <div>About</div>
+          <Route exact path="/home">
+            <Home />
           </Route>
-          <Route path="/users">
-            <div>users</div>
+          <Route exact path="/tasks">
+            <Tasks />
           </Route>
-          <Route path="/">
-            <div>Home</div>
+          <Route path="/work">
+            <div>Work</div>
+          </Route>
+          <Route path="/burndown">
+            <div>Burndown</div>
+          </Route>
+          <Route exact path="/">
+            <div>Hi</div>
           </Route>
         </Switch>
       </Router>
