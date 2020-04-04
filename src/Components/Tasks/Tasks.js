@@ -20,15 +20,14 @@ const tasks = [{ id: 0, classes: "badge badge-pill ", name: "All" }];
 
 function Tasks() {
   return (
-    <div className="d-flex flex-column flex-wrap align-items-center h-100">
-      <div className=" h-100 w-25">
-        <List items={tags}>
-          <Tag />
-        </List>
-      </div>
-      <div className="h-50 w-75">
+    <div className="d-flex flex-row w-100 flex-wrap align-items-start">
+      <List items={tags} className="w-25 h-100">
+        <Tag />
+      </List>
+      <div className="w-75" style={{ maxHeight: "40vh" }}>
         {
           <MaterialTable
+            className={"myTable"}
             title="New Sprint"
             columns={[
               { title: "Name", field: "name" },
@@ -74,7 +73,7 @@ function Tasks() {
           />
         }
       </div>
-      <div className="h-50 w-75">
+      <div className="h-50 w-75" style={{ height: "50%" }}>
         {
           <MaterialTable
             title="All tasks"

@@ -1,7 +1,7 @@
 import React from "react";
 
-import "./Tag.scss";
-function Tag({ item }) {
+import "./Task.scss";
+function Task({ item }) {
   return (
     <span className={item.classes} key={item.id}>
       {item.name}
@@ -9,4 +9,4 @@ function Tag({ item }) {
   );
 }
 
-export default Tag;
+export default Task;

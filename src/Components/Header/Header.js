@@ -6,7 +6,7 @@ import "./Header.scss";
 function Header() {
   return (
     <>
-      <Navbar bg="light" variant="light">
+      <Navbar bg="light" variant="light" className="border border-light">
         <Navbar.Brand>
           <h3 className="logo">
             <Link to="/home" className="logo-text">
